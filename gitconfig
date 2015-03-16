@@ -1,0 +1,12 @@
+[user]
+	name = Bryan Yap
+	email = bryan.yap@alliants.com
+[core]
+	editor = vim
+	excludesfile = /Users/bryan/.gitignore.global
+[push]
+	default = current
+[color]
+	ui = auto
+[alias]
+	l = log --graph --date=short --pretty=format:\"%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset\"
