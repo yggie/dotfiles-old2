@@ -208,11 +208,10 @@ set laststatus=2                                            " Enable the Airline
 let g:airline_powerline_fonts = 1                           " Enable Powerline fonts
 
 " ====[ Emmet ]====
-autocmd BufNewFile,BufRead *.erb set filetype=html          " Treat erb files like html files
 autocmd BufEnter * call EnableEmmetIfHtml()                 " Optionally enable intelligent Emmet expansion
 
 function EnableEmmetIfHtml()
-  if &ft =~ 'html'
+  if &ft =~ 'html' || &ft =~ 'eruby'
     imap <expr><C-e> emmet#expandAbbrIntelligent("\<Tab>")
   else
     imap <expr><C-e> "\<C-e>"
