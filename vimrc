@@ -118,6 +118,7 @@ set nowb
 
 " Because color matters
 autocmd BufRead,BufNewFile *jshintrc,*bowerrc,*.json.dist set filetype=json
+autocmd BufRead,BufNewFile Guardfile set filetype=ruby
 
 " ############################################################################ "
 "                             Custom Functions
