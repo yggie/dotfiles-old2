@@ -118,7 +118,7 @@ set nowb
 
 " Because color matters
 autocmd BufRead,BufNewFile *jshintrc,*bowerrc,*.json.dist set filetype=json
-autocmd BufRead,BufNewFile Guardfile set filetype=ruby
+autocmd BufRead,BufNewFile *Guardfile,*pryrc set filetype=ruby
 
 " ############################################################################ "
 "                             Custom Functions
@@ -277,6 +277,10 @@ nnoremap <Leader>l :<C-u>call ToggleErrors()<CR>|                         " Togg
 
 nnoremap vv :vsplit<CR>|                                                  " Shortcut for :vsplit
 nnoremap ss :split<CR>|                                                   " Shortcut for :split
+
+
+" ====[ Ruby Helpers ]====
+nnoremap <Leader>Ra :! rspec<CR>|                                         " Run all specs
 
 
 " ====[ Teaching Aids ]====

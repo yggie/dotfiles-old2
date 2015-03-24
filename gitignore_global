@@ -2,3 +2,4 @@
 .agignore
 
 Guardfile
+.pryrc
