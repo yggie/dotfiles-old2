@@ -259,11 +259,11 @@ nnoremap <Leader>t :CtrlP<CR>|                                            " Same
 nnoremap <Leader>b :CtrlPBuffer<CR>|                                      " Shortcut for CtrlPBuffer
 
 nnoremap <Leader>n :nohlsearch<CR>|                                       " Clear search highlighting
-nnoremap <Leader>s *``|                                                   " Search for the word under the cursor
+nnoremap <Leader>s *N|                                                    " Search for the word under the cursor
 vnoremap <Leader>s <Esc>/<C-r>=GetVisual()<CR><CR>N|                      " Search for the current selection
-nnoremap <Leader>r *``:%s///gc<Left><Left><Left>|                         " Search and replace word under the cursor
+nnoremap <Leader>r *N:%s///gc<Left><Left><Left>|                          " Search and replace word under the cursor
 vnoremap <Leader>r <Esc>:%s/<C-r>=GetVisual()<CR>//gc<Left><Left><Left>|  " Search and replace selection
-nnoremap <Leader>c *``ce|                                                 " Search for the word under the cursor and change current word
+nnoremap <Leader>c *Nce|                                                  " Search for the word under the cursor and change current word
 
 nnoremap <Leader>d /\<<C-r>=expand('<cword>')<CR>\>
 

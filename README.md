@@ -11,6 +11,7 @@ Currently the dotfiles contain the following configuration files:
 * `tmux.conf` – Configuration for [tmux](http://tmux.sourceforge.net/) for
   terminal multiplexing.
 * `config.fish` – Configuration for my [fish shell](http://fishshell.com/).
+* `jshintrc` – Configuration for `jshint`.
 
 ## Compatibility
 
@@ -45,9 +46,9 @@ the repository under the `.dotfiles/` in your home directory and using the
 following commands:
 
 ```
-$ cd ~/
-$ git clone https://github.com/yggie/dotfiles.git .dotfiles
-$ rcup -v -x LICENSE -x README.md
+cd ~/
+git clone https://github.com/yggie/dotfiles.git .dotfiles
+rcup -v -x LICENSE -x README.md
 ```
 
 And of course, install the vim plugins:
