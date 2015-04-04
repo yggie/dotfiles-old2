@@ -42,6 +42,7 @@ Plugin 'tpope/vim-endwise'                      " Wisely add “end” in Ruby
 Plugin 'Raimondi/delimitMate'                   " Add closing delimiters automagically
 Plugin 'groenewege/vim-less'                    " Syntax highlighting for LESS
 Plugin 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and splits
+Plugin 'nginx.vim'                              " Nginx config syntax highlighting
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -177,6 +178,10 @@ endfunction
 " ############################################################################ "
 "                         Plugin Configurations
 " ############################################################################ "
+
+
+" ====[ nginx ]====
+au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
 
 
 " ====[ CtrlP ]====
