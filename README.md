@@ -12,6 +12,7 @@ Currently the dotfiles contain the following configuration files:
   terminal multiplexing.
 * `config.fish` – Configuration for my [fish shell](http://fishshell.com/).
 * `jshintrc` – Configuration for `jshint`.
+* `dircolors` – Color configuration for GNU Coreutils commands.
 
 ## Compatibility
 
@@ -34,6 +35,14 @@ Additional dependencies that don’t come with the box:
 * [tmux](http://tmux.sourceforge.net/)
 * [Powerline fonts](https://github.com/powerline/fonts) – for the fancy
   powerline
+
+
+**NOTE**: If you are on Mac OS X, you will also need GNU Coreutils, which can be
+easily installed with HomeBrew:
+
+```
+brew install coreutils
+```
 
 ## How to Use
 

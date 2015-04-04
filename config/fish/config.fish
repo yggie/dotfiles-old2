@@ -22,3 +22,17 @@ set fish_plugins theme
 # Use the colorful version of grep
 alias grep="grep --color"
 alias tree="tree -C"
+
+if [ (uname) = "Darwin" ]
+  # requires GNU coreutils to be installed (brew install coreutils)
+  set PATH (brew --prefix coreutils)/libexec/gnubin $PATH
+  set MANPATH (brew --prefix coreutils)/libexec/gnuman $MANPATH
+end
+
+if test -e ~/.dircolors
+  eval (dircolors -c ~/.dircolors | sed 's/>&\/dev\/null$//')
+end
+
+alias ls="ls --color=always"
+alias grep="grep --color=always"
+alias egrep="egrep --color=always"
