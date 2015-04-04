@@ -84,8 +84,9 @@ set confirm                                     " Require confirmation before cl
 set cursorline                                  " Highlight the current line
 let &colorcolumn=join(range(81, 256), ",")      " puts thick boundary after the 80 character line
 
-hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+hi CursorLine   cterm=NONE ctermbg=darkgrey guibg=darkgrey
+hi CursorColumn cterm=NONE ctermbg=darkgrey guibg=darkgrey
+hi ColorColumn  cterm=NONE ctermbg=darkgrey guibg=darkgrey
 
 set fillchars+=vert:\ |                         " Remove the ugly vertical split character
 
