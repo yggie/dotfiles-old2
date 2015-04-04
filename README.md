@@ -54,7 +54,7 @@ rcup -v -x LICENSE -x README.md
 And of course, install the vim plugins:
 
 ```
-$ vim +PluginInstall +qa
+vim +PluginInstall +qa
 ```
 
 ## License

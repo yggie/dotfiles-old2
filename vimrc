@@ -117,8 +117,9 @@ set nobackup
 set nowb
 
 " Because color matters
-autocmd BufRead,BufNewFile *jshintrc,*bowerrc,*.json.dist set filetype=json
+autocmd BufRead,BufNewFile *eslintrc,*jshintrc,*bowerrc,*.json.dist set filetype=json
 autocmd BufRead,BufNewFile *Guardfile,*pryrc set filetype=ruby
+autocmd BufRead,BufNewFile *Procfile set filetype=yaml
 
 " ############################################################################ "
 "                             Custom Functions
@@ -212,7 +213,7 @@ let g:airline_powerline_fonts = 1                           " Enable Powerline f
 autocmd BufEnter * call EnableEmmetIfHtml()                 " Optionally enable intelligent Emmet expansion
 
 function EnableEmmetIfHtml()
-  if &ft =~ 'html' || &ft =~ 'eruby'
+  if &ft =~ 'html' || &ft =~ 'eruby' || &ft =~ 'javascript'
     imap <expr><C-e> emmet#expandAbbrIntelligent("\<Tab>")
   else
     imap <expr><C-e> "\<C-e>"
@@ -280,7 +281,8 @@ nnoremap ss :split<CR>|                                                   " Shor
 
 
 " ====[ Ruby Helpers ]====
-nnoremap <Leader>Ra :! rspec<CR>|                                         " Run all specs
+nnoremap <Leader>RA :! rspec<CR>|                                         " Run all specs
+nnoremap <Leader>RR :! rspec %<CR>|                                       " Run the current spec
 
 
 " ====[ Teaching Aids ]====
