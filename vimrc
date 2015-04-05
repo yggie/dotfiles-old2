@@ -290,6 +290,9 @@ nnoremap ss :split<CR>|                                                   " Shor
 nnoremap <Leader>RA :! rspec<CR>|                                         " Run all specs
 nnoremap <Leader>RR :! rspec %<CR>|                                       " Run the current spec
 
+" ====[ Rust Helpers ]====
+nnoremap <Leader>CB :! cargo build<CR>|                                   " Executes cargo build
+nnoremap <Leader>CT :! cargo test<CR>|                                    " Executes cargo test
 
 " ====[ Teaching Aids ]====
 noremap <Left> :throw " Vim Tip #1: Use “h” to navigate left"<CR>
