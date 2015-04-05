@@ -285,14 +285,17 @@ nnoremap <Leader>l :<C-u>call ToggleErrors()<CR>|                         " Togg
 nnoremap vv :vsplit<CR>|                                                  " Shortcut for :vsplit
 nnoremap ss :split<CR>|                                                   " Shortcut for :split
 
-
 " ====[ Ruby Helpers ]====
 nnoremap <Leader>RA :! rspec<CR>|                                         " Run all specs
 nnoremap <Leader>RR :! rspec %<CR>|                                       " Run the current spec
 
+" ====[ JavaScript Helpers ]====
+nnoremap <Leader>KK :! karma start --single-run<CR>|                      " Run the karma start task with the single run option
+nnoremap <Leader>KR :! karma run<CR>|                                     " Run the karma run task
+
 " ====[ Rust Helpers ]====
-nnoremap <Leader>CB :! cargo build<CR>|                                   " Executes cargo build
-nnoremap <Leader>CT :! cargo test<CR>|                                    " Executes cargo test
+nnoremap <Leader>CC :! cargo build<CR>|                                   " Executes cargo build
+nnoremap <Leader>CA :! cargo test<CR>|                                    " Executes cargo test
 
 " ====[ Teaching Aids ]====
 noremap <Left> :throw " Vim Tip #1: Use “h” to navigate left"<CR>
