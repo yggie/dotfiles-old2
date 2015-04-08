@@ -286,6 +286,7 @@ EXEC                    00;38;5;160                         # files with execute
 *Gemfile.lock           00;38;5;074
 *Guardfile              00;38;5;074
 *Capfile                00;38;5;074
+.gemspec                00;38;5;074
 
 # Rust
 *Cargo.toml             00;38;5;074
@@ -303,6 +304,7 @@ EXEC                    00;38;5;160                         # files with execute
 *Rakefile               00;38;5;074
 *Dockerfile             00;38;5;074
 *Vagrantfile            00;38;5;074
+*travis.yml             00;38;5;074
 
 
 # ############################################################################ #
