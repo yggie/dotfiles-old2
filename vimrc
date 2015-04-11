@@ -31,7 +31,7 @@ Plugin 'wting/rust.vim'                         " Vim support for Rust file dete
 Plugin 'bling/vim-airline'                      " Lean & mean status/tabline for vim that’s light as air
 Plugin 'mattn/emmet-vim'                        " Emmet for Vim
 Plugin 'othree/html5.vim'                       " HTML5 autocomplete and syntax
-Plugin 'cakebaker/scss-syntax.vim'              " Vim syntax file for scss
+Plugin 'hail2u/vim-css3-syntax'                 " Vim syntax file for SCSS and improved CSS syntax highlighting
 Plugin 'tpope/vim-rails'                        " Ruby on Rails power tools
 Plugin 'tomtom/tcomment_vim'                    " An extensible & universal comment vim-plugin that also handles embedded filetypes
 Plugin 'scrooloose/syntastic'                   " Syntax check hacks for Vim
