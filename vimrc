@@ -45,6 +45,7 @@ Plugin 'christoomey/vim-tmux-navigator'         " Seamless navigation between tm
 Plugin 'nginx.vim'                              " Nginx config syntax highlighting
 Plugin 'pangloss/vim-javascript'                " Improves JavaScript syntax and indenting
 Plugin 'mxw/vim-jsx'                            " Syntax highlighting and indenting for jsx
+Plugin 'matchit.zip'                            " Extend % matching to support more than one character
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

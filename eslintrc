@@ -4,11 +4,13 @@
     "jsx": true
   },
   "env": {
+    "node": true,
     "browser": true,
     "es6": true
   },
   "rules": {
     "global-strict": [2, "always"],
+    "no-underscore-dangle": false,
     "no-wrap-func": false,
     "quotes": [2, "single", "avoid-escape"],
     "space-before-function-paren": "always",
