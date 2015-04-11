@@ -43,6 +43,8 @@ Plugin 'Raimondi/delimitMate'                   " Add closing delimiters automag
 Plugin 'groenewege/vim-less'                    " Syntax highlighting for LESS
 Plugin 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and splits
 Plugin 'nginx.vim'                              " Nginx config syntax highlighting
+Plugin 'pangloss/vim-javascript'                " Improves JavaScript syntax and indenting
+Plugin 'mxw/vim-jsx'                            " Syntax highlighting and indenting for jsx
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -209,6 +211,7 @@ let g:syntastic_always_populate_loc_list = 1                " Populate the locat
 let g:syntastic_check_on_open = 1                           " Run Syntastic when opening a file
 let g:syntastic_check_on_wq = 0                             " Skip Syntastic when closing a file
 let g:syntastic_html_tidy_ignore_errors=["proprietary attribute", "trimming empty", "<form> lacks \"action\"", "> is not recognized!", "discarding unexpected", "<img> lacks \"src\""]
+let g:syntastic_javascript_checkers = ['eslint']
 
 " ====[ Airline ]====
 " see: https://coderwall.com/p/yiot4q/setup-vim-powerline-and-iterm2-on-mac-os-x
@@ -286,8 +289,8 @@ nnoremap vv :vsplit<CR>|                                                  " Shor
 nnoremap ss :split<CR>|                                                   " Shortcut for :split
 
 " ====[ Ruby Helpers ]====
-nnoremap <Leader>RA :! rspec<CR>|                                         " Run all specs
-nnoremap <Leader>RR :! rspec %<CR>|                                       " Run the current spec
+nnoremap <Leader>RA :! bundle exec rspec<CR>|                             " Run all specs
+nnoremap <Leader>RR :! bundle exec rspec %<CR>|                           " Run the current spec
 
 " ====[ JavaScript Helpers ]====
 nnoremap <Leader>KK :! karma start --single-run<CR>|                      " Run the karma start task with the single run option

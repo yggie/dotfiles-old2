@@ -6,12 +6,13 @@ Currently the dotfiles contain the following configuration files:
 * `gitconfig` – Configuration for [git](http://git-scm.com/), see
   [here](http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) for
   more information.
+* `gitignore_global` - Specified in `gitconfig` as the global gitignore file
 * `vimrc` – Configuration for the [Vim](http://www.vim.org/) command line
   editor, which is without a doubt the best editor in existence.
 * `tmux.conf` – Configuration for [tmux](http://tmux.sourceforge.net/) for
   terminal multiplexing.
 * `config.fish` – Configuration for my [fish shell](http://fishshell.com/).
-* `jshintrc` – Configuration for `jshint`.
+* `eslintrc` – Configuration for `eslint`.
 * `dircolors` – Color configuration for GNU Coreutils commands.
 
 ## Compatibility
@@ -35,6 +36,7 @@ Additional dependencies that don’t come with the box:
 * [tmux](http://tmux.sourceforge.net/)
 * [Powerline fonts](https://github.com/powerline/fonts) – for the fancy
   powerline
+* [eslint](https://github.com/eslint/eslint) - JavaScript syntax checker
 
 
 **NOTE**: If you are on Mac OS X, you will also need GNU Coreutils, which can be

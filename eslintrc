@@ -1,0 +1,17 @@
+{
+  "ecmaFeatures": {
+    "modules": true,
+    "jsx": true
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "rules": {
+    "global-strict": [2, "always"],
+    "no-wrap-func": false,
+    "quotes": [2, "single", "avoid-escape"],
+    "space-before-function-paren": "always",
+    "spaced-line-comment": "always"
+  }
+}

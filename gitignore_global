@@ -2,6 +2,7 @@
 .agignore
 
 .jshintrc
+.eslintrc
 
 Procfile
 Guardfile
