@@ -1,8 +1,12 @@
 {
-  "ecmaFeatures": {
-    "modules": true,
+  "parser": "babel-eslint",
+  "settings": {
+    "ecmascript": 6,
     "jsx": true
   },
+  "plugins": [
+    "react"
+  ],
   "env": {
     "node": true,
     "browser": true,
@@ -15,5 +19,14 @@
     "quotes": [2, "single", "avoid-escape"],
     "space-before-function-paren": "always",
     "spaced-line-comment": "always"
+  },
+  "globals": {
+    "it": true,
+    "describe": true,
+    "expect": true,
+    "beforeEach": true,
+    "before": true,
+    "after": true,
+    "afterEach": true
   }
 }
