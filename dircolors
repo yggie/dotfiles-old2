@@ -276,6 +276,7 @@ EXEC                    00;38;5;160                         # files with execute
 *package.json           00;38;5;074
 *karma.conf.js          00;38;5;074
 *protractor.conf.js     00;38;5;074
+*npm-shrinkwrap.json    00;38;5;074
 
 # Ruby
 *rspec                  00;38;5;074

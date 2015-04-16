@@ -75,7 +75,8 @@ set scrolloff=3                                 " Give a margin around searches 
 set autoindent                                  " Naïve indenting
 set smartindent                                 " Smart indenting for C-like languages
 set shiftwidth=2                                " Number of auto-indent spaces
-set softtabstop=2                               " Number of spaces per Tab
+set softtabstop=2                               " Number of spaces to make a Tab
+set tabstop=2                                   " Number of spaces used per Tab
 set smarttab                                    " Enable smart-tabs
 set expandtab                                   " Replace tabs with spaces
 set list listchars=tab:\ \ ,trail:·             " Display tabs and trailing spaces visually
@@ -125,6 +126,7 @@ set nowb
 autocmd BufRead,BufNewFile *eslintrc,*jshintrc,*bowerrc,*.json.dist set filetype=json
 autocmd BufRead,BufNewFile *Guardfile,*pryrc set filetype=ruby
 autocmd BufRead,BufNewFile *Procfile set filetype=yaml
+autocmd BufRead,BufNewFile *Makefile set noexpandtab
 
 " ############################################################################ "
 "                             Custom Functions
