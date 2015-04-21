@@ -18,7 +18,9 @@
     "no-wrap-func": false,
     "quotes": [2, "single", "avoid-escape"],
     "space-before-function-paren": "always",
-    "spaced-line-comment": "always"
+    "spaced-line-comment": "always",
+    "no-unused-expressions": false,
+    "no-extend-native": false
   },
   "globals": {
     "it": true,
@@ -27,6 +29,10 @@
     "beforeEach": true,
     "before": true,
     "after": true,
-    "afterEach": true
+    "afterEach": true,
+    "inject": true,
+    "module": true,
+    "context": true,
+    "sinon": true
   }
 }
