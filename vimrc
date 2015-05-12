@@ -46,6 +46,7 @@ Plugin 'nginx.vim'                              " Nginx config syntax highlighti
 Plugin 'pangloss/vim-javascript'                " Improves JavaScript syntax and indenting
 Plugin 'mxw/vim-jsx'                            " Syntax highlighting and indenting for jsx
 Plugin 'matchit.zip'                            " Extend % matching to support more than one character
+Plugin 'Lokaltog/vim-easymotion'                " Vim motions on speed!
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -215,7 +216,8 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1                " Populate the locations list with the warnings
 let g:syntastic_check_on_open = 1                           " Run Syntastic when opening a file
 let g:syntastic_check_on_wq = 0                             " Skip Syntastic when closing a file
-let g:syntastic_html_tidy_ignore_errors=["proprietary attribute", "trimming empty", "<form> lacks \"action\"", "> is not recognized!", "discarding unexpected", "<img> lacks \"src\""]
+let g:syntastic_html_tidy_exec = "tidy5"
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute ", "trimming empty <", "lacks \"action\"", "> is not recognized!", "discarding unexpected", "<img> lacks \"src\"", "unescaped &", "\"id\" has invalid value"]
 let g:syntastic_javascript_checkers = ['eslint']
 
 " ====[ Airline ]====
@@ -258,9 +260,6 @@ let mapleader = ","|                                                      " Chan
 
 nnoremap 0 ^|                                                             " Swap keys 0 -> ^
 nnoremap ^ 0|                                                             " Swap keys ^ -> 0
-
-nnoremap K 3k|                                                            " Faster vertical movement, because life is short
-nnoremap J 3j|                                                            " Faster vertical movement, because life is short
 
 nnoremap <Leader>w :%s/\s\+$<CR><C-o>:nohlsearch<CR>|                     " Clear all trailing whitespaces
 
