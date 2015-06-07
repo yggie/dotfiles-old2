@@ -293,17 +293,23 @@ nnoremap <Leader>l :<C-u>call ToggleErrors()<CR>|                         " Togg
 nnoremap vv :vsplit<CR>|                                                  " Shortcut for :vsplit
 nnoremap ss :split<CR>|                                                   " Shortcut for :split
 
+" Runs the command in a new tmux window and keeps Vim in its current state
+function TmuxRun(string)
+  execute 'silent !tmux new-window "' . a:string . '; bash -c ''read -n 1 -s''"'
+  redraw!
+endfunction
+
 " ====[ Ruby Helpers ]====
-nnoremap <Leader>RA :! bundle exec rspec<CR>|                             " Run all specs
-nnoremap <Leader>RR :! bundle exec rspec %<CR>|                           " Run the current spec
+nnoremap <Leader>RA :call TmuxRun('bundle exec rspec')<CR>|               " Run all specs
+nnoremap <Leader>RR :call TmuxRun('bundle exec rspec %')<CR>|             " Run the current spec
 
 " ====[ JavaScript Helpers ]====
-nnoremap <Leader>KK :! karma start --single-run<CR>|                      " Run the karma start task with the single run option
-nnoremap <Leader>KR :! karma run<CR>|                                     " Run the karma run task
+nnoremap <Leader>KK :call TmuxRun('karma start --single-run')<CR>|        " Run the karma start task with the single run option
+nnoremap <Leader>KR :call TmuxRun('karma run')<CR>|                       " Run the karma run task
 
 " ====[ Rust Helpers ]====
-nnoremap <Leader>CC :! cargo build<CR>|                                   " Executes cargo build
-nnoremap <Leader>CA :! cargo test<CR>|                                    " Executes cargo test
+nnoremap <Leader>CC :call TmuxRun('cargo build')<CR>|                     " Executes cargo build
+nnoremap <Leader>CA :call TmuxRun('cargo test')<CR>|                      " Executes cargo test
 
 " ====[ Teaching Aids ]====
 noremap <Left> :throw " Vim Tip #1: Use “h” to navigate left"<CR>
