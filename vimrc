@@ -47,6 +47,7 @@ Plugin 'pangloss/vim-javascript'                " Improves JavaScript syntax and
 Plugin 'mxw/vim-jsx'                            " Syntax highlighting and indenting for jsx
 Plugin 'matchit.zip'                            " Extend % matching to support more than one character
 Plugin 'Lokaltog/vim-easymotion'                " Vim motions on speed!
+Plugin 'sophacles/vim-processing'               " Develop Processing sketches on Vim!
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
