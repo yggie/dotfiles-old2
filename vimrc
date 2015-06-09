@@ -48,6 +48,7 @@ Plugin 'mxw/vim-jsx'                            " Syntax highlighting and indent
 Plugin 'matchit.zip'                            " Extend % matching to support more than one character
 Plugin 'Lokaltog/vim-easymotion'                " Vim motions on speed!
 Plugin 'sophacles/vim-processing'               " Develop Processing sketches on Vim!
+Plugin 'tpope/vim-abolish'                      " Easily search for, substitute and abbreviate multiple variants of a word
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
