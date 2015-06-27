@@ -49,6 +49,7 @@ Plugin 'matchit.zip'                            " Extend % matching to support m
 Plugin 'Lokaltog/vim-easymotion'                " Vim motions on speed!
 Plugin 'sophacles/vim-processing'               " Develop Processing sketches on Vim!
 Plugin 'tpope/vim-abolish'                      " Easily search for, substitute and abbreviate multiple variants of a word
+Plugin 'elixir-lang/vim-elixir'                 " Syntax highlighting for ex, exs and eex files
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
