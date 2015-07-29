@@ -14,13 +14,12 @@
   },
   "rules": {
     "strict": [2, "global"],
-    "no-underscore-dangle": false,
-    "no-wrap-func": false,
+    "no-underscore-dangle": 0,
+    "no-wrap-func": 0,
     "quotes": [2, "single", "avoid-escape"],
-    "space-before-function-paren": "always",
-    "spaced-line-comment": "always",
-    "no-unused-expressions": false,
-    "no-extend-native": false
+    "space-before-function-paren": [2, "always"],
+    "no-unused-expressions": 0,
+    "no-extend-native": 0
   },
   "globals": {
     "it": true,
