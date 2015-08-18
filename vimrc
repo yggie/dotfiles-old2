@@ -50,6 +50,7 @@ Plugin 'Lokaltog/vim-easymotion'                " Vim motions on speed!
 Plugin 'sophacles/vim-processing'               " Develop Processing sketches on Vim!
 Plugin 'tpope/vim-abolish'                      " Easily search for, substitute and abbreviate multiple variants of a word
 Plugin 'elixir-lang/vim-elixir'                 " Syntax highlighting for ex, exs and eex files
+Plugin 'tikhomirov/vim-glsl'                    " Vim syntax highlighting for OpenGL Shading Language
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -280,7 +281,7 @@ nnoremap <Leader>s *N|                                                    " Sear
 vnoremap <Leader>s <Esc>/<C-r>=GetVisual()<CR><CR>N|                      " Search for the current selection
 nnoremap <Leader>r *N:%s///gc<Left><Left><Left>|                          " Search and replace word under the cursor
 vnoremap <Leader>r <Esc>:%s/<C-r>=GetVisual()<CR>//gc<Left><Left><Left>|  " Search and replace selection
-nnoremap <Leader>c *Nce|                                                  " Search for the word under the cursor and change current word
+nnoremap <Leader>c *Ncw|                                                  " Search for the word under the cursor and change current word
 
 nnoremap <Leader>d /\<<C-r>=expand('<cword>')<CR>\>
 
