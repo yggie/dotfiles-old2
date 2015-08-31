@@ -130,9 +130,9 @@ set nobackup
 set nowb
 
 " Because color matters
-autocmd BufRead,BufNewFile *eslintrc,*jshintrc,*bowerrc set filetype=json
+autocmd BufRead,BufNewFile *jshintrc,*bowerrc set filetype=json
 autocmd BufRead,BufNewFile *Guardfile,*pryrc set filetype=ruby
-autocmd BufRead,BufNewFile *Procfile set filetype=yaml
+autocmd BufRead,BufNewFile *eslintrc,*Procfile set filetype=yaml
 autocmd BufRead,BufNewFile *Makefile set noexpandtab
 
 " ############################################################################ "
