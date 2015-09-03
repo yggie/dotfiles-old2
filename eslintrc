@@ -1,13 +1,6 @@
-parser: 'babel-eslint'
-plugins: ['react']
-settings:
-  ecmascript: 6
-  jsx: true
-
 env:
   node: true
   browser: true
-  es6: true
 
 globals:
   inject: true
