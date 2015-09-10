@@ -296,6 +296,9 @@ nnoremap <Leader>l :<C-u>call ToggleErrors()<CR>|                         " Togg
 nnoremap vv :vsplit<CR>|                                                  " Shortcut for :vsplit
 nnoremap ss :split<CR>|                                                   " Shortcut for :split
 
+nnoremap <Leader>! :silent !!<CR>:redraw!<CR>|                            " Reruns the last shell command
+nnoremap <Leader>f :NERDTreeFind<CR>|                                     " Opens the current file in the NERDTree
+
 " Runs the command in a new tmux window and keeps Vim in its current state
 function TmuxRun(string)
   execute 'silent !tmux new-window "' . a:string . '; bash -c ''read -n 1 -s''"'
