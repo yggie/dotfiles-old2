@@ -228,6 +228,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 " see: https://coderwall.com/p/yiot4q/setup-vim-powerline-and-iterm2-on-mac-os-x
 set laststatus=2                                            " Enable the Airline in single Vim panes
 let g:airline_powerline_fonts = 1                           " Enable Powerline fonts
+let g:airline_section_b = ''                                " Hides the git branch name (my branch names tend to be too long)
 
 " ====[ Emmet ]====
 autocmd BufEnter * call EnableEmmetIfHtml()                 " Optionally enable intelligent Emmet expansion
