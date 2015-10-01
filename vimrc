@@ -51,6 +51,7 @@ Plugin 'sophacles/vim-processing'               " Develop Processing sketches on
 Plugin 'tpope/vim-abolish'                      " Easily search for, substitute and abbreviate multiple variants of a word
 Plugin 'elixir-lang/vim-elixir'                 " Syntax highlighting for ex, exs and eex files
 Plugin 'tikhomirov/vim-glsl'                    " Vim syntax highlighting for OpenGL Shading Language
+Plugin 'peterhoeg/vim-qml'                      " Syntax highlighting for Qt’s QML files
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -131,8 +132,9 @@ set nowb
 
 " Because color matters
 autocmd BufRead,BufNewFile *jshintrc,*bowerrc set filetype=json
-autocmd BufRead,BufNewFile *Guardfile,*pryrc set filetype=ruby
+autocmd BufRead,BufNewFile Vagrantfile,Guardfile,*pryrc set filetype=ruby
 autocmd BufRead,BufNewFile *eslintrc,*Procfile set filetype=yaml
+autocmd BufRead,BufNewFile mix.lock set filetype=elixir
 autocmd BufRead,BufNewFile *Makefile set noexpandtab
 
 " ############################################################################ "
@@ -302,7 +304,7 @@ nnoremap <Leader>f :NERDTreeFind<CR>|                                     " Open
 
 " Runs the command in a new tmux window and keeps Vim in its current state
 function TmuxRun(string)
-  execute 'silent !tmux new-window "' . a:string . '; bash -c ''read -n 1 -s''"'
+  execute 'silent !tmux new-window -k -n"' . a:string . '" -t:0 "' . a:string . '; bash -c ''read -t 1 -n 10000 discard; read -p\"Done, Press any key to close the tmux window\" -n 1 -s''"'
   redraw!
 endfunction
 
@@ -317,6 +319,7 @@ nnoremap <Leader>KR :call TmuxRun('karma run')<CR>|                       " Run 
 " ====[ Rust Helpers ]====
 nnoremap <Leader>CC :call TmuxRun('cargo build')<CR>|                     " Executes cargo build
 nnoremap <Leader>CA :call TmuxRun('cargo test')<CR>|                      " Executes cargo test
+nnoremap <Leader>CR :call TmuxRun('cargo run')<CR>|                       " Executes cargo run
 
 " ====[ Teaching Aids ]====
 noremap <Left> :throw " Vim Tip #1: Use “h” to navigate left"<CR>

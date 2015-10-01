@@ -293,6 +293,10 @@ EXEC                    00;38;5;160                         # files with execute
 *Cargo.toml             00;38;5;074
 *Cargo.lock             00;38;5;074
 
+# Elixir
+*mix.exs                00;38;5;074
+*mix.lock               00;38;5;074
+
 # iOS
 *Podfile                00;38;5;074
 *Podfile.lock           00;38;5;074
