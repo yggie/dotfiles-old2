@@ -51,7 +51,6 @@ Plugin 'sophacles/vim-processing'               " Develop Processing sketches on
 Plugin 'tpope/vim-abolish'                      " Easily search for, substitute and abbreviate multiple variants of a word
 Plugin 'elixir-lang/vim-elixir'                 " Syntax highlighting for ex, exs and eex files
 Plugin 'tikhomirov/vim-glsl'                    " Vim syntax highlighting for OpenGL Shading Language
-Plugin 'peterhoeg/vim-qml'                      " Syntax highlighting for Qt’s QML files
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -236,7 +235,7 @@ let g:airline_section_b = '%{&ft}'                          " Hides the git bran
 autocmd BufEnter * call EnableEmmetIfHtml()                 " Optionally enable intelligent Emmet expansion
 
 function EnableEmmetIfHtml()
-  if &ft =~ 'html' || &ft =~ 'eruby' || &ft =~ 'javascript'
+  if &ft =~ 'html' || &ft =~ 'eruby' || &ft =~ 'javascript' || &ft =~ 'eelixir'
     imap <expr><C-e> emmet#expandAbbrIntelligent("\<Tab>")
   else
     imap <expr><C-e> "\<C-e>"
