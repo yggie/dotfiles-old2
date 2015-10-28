@@ -27,7 +27,7 @@ Plugin 'scrooloose/nerdtree'                    " A tree explorer plugin for vim
 Plugin 'tpope/vim-surround'                     " quoting/parenthesizing made simple
 Plugin 'kien/ctrlp.vim'                         " Fuzzy file, buffer, mru, tag, etc finder
 Plugin 'altercation/vim-colors-solarized'       " Precision colorscheme for vim
-Plugin 'wting/rust.vim'                         " Vim support for Rust file detection and syntax highlighting
+Plugin 'rust-lang/rust.vim'                     " Vim support for Rust file detection and syntax highlighting
 Plugin 'bling/vim-airline'                      " Lean & mean status/tabline for vim that’s light as air
 Plugin 'mattn/emmet-vim'                        " Emmet for Vim
 Plugin 'othree/html5.vim'                       " HTML5 autocomplete and syntax
