@@ -1,4 +1,4 @@
-syntax keyword jsGlobalObjects require
+syntax keyword jsGlobalObjects require module
 
 hi jsGlobalObjects        ctermfg=DarkMagenta guifg=DarkMagenta
 hi jsThis                 ctermfg=DarkGreen guifg=DarkGreen

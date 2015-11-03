@@ -26,6 +26,7 @@ alias tree="tree -C"
 if [ (uname) = "Darwin" ]
   # requires GNU coreutils to be installed (brew install coreutils)
   set PATH (brew --prefix coreutils)/libexec/gnubin $PATH
+  set PATH /usr/local/sbin $PATH # used for rabbitmq
   set MANPATH (brew --prefix coreutils)/libexec/gnuman $MANPATH
 end
 

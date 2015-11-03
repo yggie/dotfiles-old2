@@ -51,6 +51,7 @@ Plugin 'sophacles/vim-processing'               " Develop Processing sketches on
 Plugin 'tpope/vim-abolish'                      " Easily search for, substitute and abbreviate multiple variants of a word
 Plugin 'elixir-lang/vim-elixir'                 " Syntax highlighting for ex, exs and eex files
 Plugin 'tikhomirov/vim-glsl'                    " Vim syntax highlighting for OpenGL Shading Language
+Plugin 'janko-m/vim-test'                       " Runs tests
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -302,13 +303,12 @@ nnoremap <Leader>! :silent !!<CR>:redraw!<CR>|                            " Reru
 nnoremap <Leader>f :NERDTreeFind<CR>|                                     " Opens the current file in the NERDTree
 
 " Runs the command in a new tmux window and keeps Vim in its current state
-function TmuxRun(string)
-  execute 'silent !tmux new-window -k -n"' . a:string . '" -t:0 "' . a:string . '; bash -c ''read -t 1 -n 10000 discard; read -p\"Done, Press any key to close the tmux window\" -n 1 -s''"'
+function TmuxRun(cmd)
+  execute 'silent !tmux new-window -k -n"' . a:cmd . '" -t:0 "' . a:cmd . '; bash -c ''read -t 1 -n 10000 discard; read -p\"Done, Press any key to close the tmux window\" -n 1 -s''"'
   redraw!
 endfunction
 
 " ====[ Ruby Helpers ]====
-nnoremap <Leader>RA :call TmuxRun('bundle exec rspec')<CR>|               " Run all specs
 nnoremap <Leader>RR :call TmuxRun('bundle exec rspec %')<CR>|             " Run the current spec
 
 " ====[ JavaScript Helpers ]====
@@ -316,9 +316,20 @@ nnoremap <Leader>KK :call TmuxRun('karma start --single-run')<CR>|        " Run 
 nnoremap <Leader>KR :call TmuxRun('karma run')<CR>|                       " Run the karma run task
 
 " ====[ Rust Helpers ]====
-nnoremap <Leader>CC :call TmuxRun('cargo build')<CR>|                     " Executes cargo build
-nnoremap <Leader>CA :call TmuxRun('cargo test')<CR>|                      " Executes cargo test
+nnoremap <Leader>CB :call TmuxRun('cargo build')<CR>|                     " Executes cargo build
+nnoremap <Leader>CT :call TmuxRun('cargo test')<CR>|                      " Executes cargo test
 nnoremap <Leader>CR :call TmuxRun('cargo run')<CR>|                       " Executes cargo run
+
+" ====[ Testing ]====
+nmap <Leader>TA :TestSuite<CR>                                            " Run all tests
+nmap <Leader>TT :TestLast<CR>                                             " Run last test
+nmap <Leader>TF :TestFile<CR>                                             " Run all tests in the current file
+nmap <Leader>TN :TestNearest<CR>                                          " Run tests nearest to the cursor
+
+let g:test#custom_strategies = { 'tmux-window': function('TmuxRun') }
+let g:test#strategy = "tmux-window"
+
+let test#runners = { 'rust': ['Cargo'] }
 
 " ====[ Teaching Aids ]====
 noremap <Left> :throw " Vim Tip #1: Use “h” to navigate left"<CR>
