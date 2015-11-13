@@ -137,6 +137,9 @@ autocmd BufRead,BufNewFile *eslintrc,*Procfile set filetype=yaml
 autocmd BufRead,BufNewFile mix.lock set filetype=elixir
 autocmd BufRead,BufNewFile *Makefile set noexpandtab
 
+" And so does space
+autocmd Filetype glsl setlocal tabstop=4 softtabstop=4 shiftwidth=4
+
 " ############################################################################ "
 "                             Custom Functions
 " ############################################################################ "

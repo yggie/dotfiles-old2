@@ -1,5 +1,5 @@
 if !exists('g:test#rust#cargo#file_pattern')
-  let g:test#rust#cargo#file_pattern = '_test\.rs$'
+  let g:test#rust#cargo#file_pattern = '\.rs$'
 endif
 
 function! test#rust#cargo#test_file(file) abort
