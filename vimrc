@@ -52,7 +52,7 @@ Plugin 'tpope/vim-abolish'                      " Easily search for, substitute 
 Plugin 'elixir-lang/vim-elixir'                 " Syntax highlighting for ex, exs and eex files
 Plugin 'tikhomirov/vim-glsl'                    " Vim syntax highlighting for OpenGL Shading Language
 Plugin 'janko-m/vim-test'                       " Runs tests
-Plugin 'atelierbram/vim-colors_duotones'
+" Plugin 'atelierbram/vim-colors_duotones'        " The duotones color scheme
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -106,13 +106,15 @@ set t_Co=256
 set term=screen-256color                        " Needs to match with tmux 'default-terminal' option and the TERM environment variable
 set termencoding=utf-8
 set background=dark
-colorscheme base16-duotone-dark
+colorscheme solarized
+" colorscheme base16-duotone-dark
 highlight clear SignColumn
-let s:boundscolor="236"
+" let s:boundscolor="236"
+let s:boundscolor="00"
 exec "hi CursorLine     cterm=NONE ctermbg=" . s:boundscolor . " guibg=" . s:boundscolor
 exec "hi CursorColumn   cterm=NONE ctermbg=" . s:boundscolor . " guibg=" . s:boundscolor
 exec "hi ColorColumn    cterm=NONE ctermbg=" . s:boundscolor . " guibg=" . s:boundscolor . " ctermfg=196"
-hi Visual ctermbg=24 guibg=24
+" hi Visual ctermbg=24 guibg=24
 unlet s:boundscolor
 
 set wildmode=longest,list                       " Tab completion shows the list of potential matches
