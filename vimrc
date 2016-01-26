@@ -52,6 +52,7 @@ Plugin 'tpope/vim-abolish'                      " Easily search for, substitute 
 Plugin 'elixir-lang/vim-elixir'                 " Syntax highlighting for ex, exs and eex files
 Plugin 'tikhomirov/vim-glsl'                    " Vim syntax highlighting for OpenGL Shading Language
 Plugin 'janko-m/vim-test'                       " Runs tests
+Plugin 'atelierbram/vim-colors_duotones'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -95,10 +96,6 @@ set confirm                                     " Require confirmation before cl
 set cursorline                                  " Highlight the current line
 let &colorcolumn=join(range(81, 512), ",")      " puts thick boundary after the 80 character line
 
-hi CursorLine   cterm=NONE ctermbg=darkgrey guibg=darkgrey
-hi CursorColumn cterm=NONE ctermbg=darkgrey guibg=darkgrey
-hi ColorColumn  cterm=NONE ctermbg=darkgrey guibg=darkgrey
-
 set regexpengine=1                              " Force Vim to use the old Regex Engine, significantly improve performance (see https://bugs.archlinux.org/task/36693)
 
 set fillchars+=vert:\ |                         " Remove the ugly vertical split character
@@ -106,11 +103,17 @@ set fillchars+=vert:\ |                         " Remove the ugly vertical split
 syntax enable                                   " Enable syntax highlighting
 set encoding=utf-8
 set t_Co=256
-set term=xterm-256color
+set term=screen-256color                        " Needs to match with tmux 'default-terminal' option and the TERM environment variable
 set termencoding=utf-8
 set background=dark
-colorscheme solarized
+colorscheme base16-duotone-dark
 highlight clear SignColumn
+let s:boundscolor="236"
+exec "hi CursorLine     cterm=NONE ctermbg=" . s:boundscolor . " guibg=" . s:boundscolor
+exec "hi CursorColumn   cterm=NONE ctermbg=" . s:boundscolor . " guibg=" . s:boundscolor
+exec "hi ColorColumn    cterm=NONE ctermbg=" . s:boundscolor . " guibg=" . s:boundscolor . " ctermfg=196"
+hi Visual ctermbg=24 guibg=24
+unlet s:boundscolor
 
 set wildmode=longest,list                       " Tab completion shows the list of potential matches
 

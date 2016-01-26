@@ -30,6 +30,8 @@ if [ (uname) = "Darwin" ]
   set MANPATH (brew --prefix coreutils)/libexec/gnuman $MANPATH
 end
 
+set TERM screen-256color
+
 if test -e ~/.dircolors
   eval (dircolors -c ~/.dircolors | sed 's/>&\/dev\/null$//')
 end
