@@ -103,7 +103,6 @@ set fillchars+=vert:\ |                         " Remove the ugly vertical split
 syntax enable                                   " Enable syntax highlighting
 set encoding=utf-8
 set t_Co=256
-set term=screen-256color                        " Needs to match with tmux 'default-terminal' option and the TERM environment variable
 set termencoding=utf-8
 set background=dark
 colorscheme solarized
