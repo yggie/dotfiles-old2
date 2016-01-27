@@ -297,6 +297,10 @@ nnoremap <Leader>d /\<<C-r>=expand('<cword>')<CR>\>
 
 nnoremap <C-l> :TmuxNavigateRight<CR>|                                    " Shortcut to switch to right pane
 nnoremap <C-h> :TmuxNavigateLeft<CR>|                                     " Shortcut to switch to left pane
+if has('nvim')
+  " FIXME workaround for issue issue: https://github.com/neovim/neovim/issues/2048
+  nnoremap <BS> :TmuxNavigateLeft<CR>
+endif
 nnoremap <C-j> :TmuxNavigateDown<CR>|                                     " Shortcut to switch to bottom pane
 nnoremap <C-k> :TmuxNavigateUp<CR>|                                       " Shortcut to switch to top pane
 
