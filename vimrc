@@ -275,6 +275,9 @@ let mapleader = ","|                                                      " Chan
 nnoremap 0 ^|                                                             " Swap keys 0 -> ^
 nnoremap ^ 0|                                                             " Swap keys ^ -> 0
 
+nnoremap ˚ {|                                                             " OS X only: sets Alt + k -> {
+nnoremap ∆ }|                                                             " OS X only: sets Alt + j -> }
+
 nnoremap <Leader>w :%s/\s\+$<CR><C-o>:nohlsearch<CR>|                     " Clear all trailing whitespaces
 
 nnoremap <Leader>gg :Ag ""<Left>|                                         " Recursively grep for text matches in all files under the current directory
