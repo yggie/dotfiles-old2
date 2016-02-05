@@ -136,8 +136,9 @@ set nowb
 
 " Because color matters
 autocmd BufRead,BufNewFile *jshintrc,*bowerrc set filetype=json
-autocmd BufRead,BufNewFile Vagrantfile,Guardfile,*pryrc set filetype=ruby
+autocmd BufRead,BufNewFile *Gemfile*,Vagrantfile,Guardfile,*pryrc set filetype=ruby
 autocmd BufRead,BufNewFile *eslintrc,*Procfile set filetype=yaml
+autocmd BufRead,BufNewFile *Dockerfile* set filetype=dockerfile
 autocmd BufRead,BufNewFile mix.lock set filetype=elixir
 autocmd BufRead,BufNewFile *Makefile set noexpandtab
 
@@ -277,6 +278,8 @@ nnoremap ^ 0|                                                             " Swap
 
 nnoremap ˚ {|                                                             " OS X only: sets Alt + k -> {
 nnoremap ∆ }|                                                             " OS X only: sets Alt + j -> }
+vnoremap ˚ {|                                                             " OS X only: sets Alt + k -> {
+vnoremap ∆ }|                                                             " OS X only: sets Alt + j -> }
 
 nnoremap <Leader>w :%s/\s\+$<CR><C-o>:nohlsearch<CR>|                     " Clear all trailing whitespaces
 
