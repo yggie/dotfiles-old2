@@ -108,13 +108,8 @@ set background=dark
 colorscheme solarized
 " colorscheme base16-duotone-dark
 highlight clear SignColumn
-" let s:boundscolor="236"
-let s:boundscolor="00"
-exec "hi CursorLine     cterm=NONE ctermbg=" . s:boundscolor . " guibg=" . s:boundscolor
-exec "hi CursorColumn   cterm=NONE ctermbg=" . s:boundscolor . " guibg=" . s:boundscolor
-exec "hi ColorColumn    cterm=NONE ctermbg=" . s:boundscolor . " guibg=" . s:boundscolor . " ctermfg=196"
+exec "hi ColorColumn    cterm=NONE ctermfg=196"
 " hi Visual ctermbg=24 guibg=24
-unlet s:boundscolor
 
 set wildmode=longest,list                       " Tab completion shows the list of potential matches
 
