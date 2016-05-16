@@ -11,6 +11,8 @@
 
 " Vundle
 set nocompatible              " be iMproved, required
+set ttyfast
+set lazyredraw
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
