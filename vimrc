@@ -54,6 +54,7 @@ Plugin 'tpope/vim-abolish'                      " Easily search for, substitute 
 Plugin 'elixir-lang/vim-elixir'                 " Syntax highlighting for ex, exs and eex files
 Plugin 'tikhomirov/vim-glsl'                    " Vim syntax highlighting for OpenGL Shading Language
 Plugin 'janko-m/vim-test'                       " Runs tests
+Plugin 'wellle/targets.vim'                     " More Vim text objects, works on arguments and delimited texts
 " Plugin 'atelierbram/vim-colors_duotones'        " The duotones color scheme
 
 " All of your Plugins must be added before the following line
