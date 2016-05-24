@@ -56,6 +56,7 @@ Plugin 'tikhomirov/vim-glsl'                    " Vim syntax highlighting for Op
 Plugin 'janko-m/vim-test'                       " Runs tests
 Plugin 'wellle/targets.vim'                     " More Vim text objects, works on arguments and delimited texts
 " Plugin 'atelierbram/vim-colors_duotones'        " The duotones color scheme
+Plugin 'airblade/vim-gitgutter'                 " Shows where the git diffs are
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -118,6 +119,8 @@ set wildmode=longest,list                       " Tab completion shows the list 
 
 set visualbell                                  " Turn off error bell
 set shell=/bin/sh                               " Vim’s default shell
+
+set updatetime=250                              " Reduces the time taken to check for updates, as suggested by http://vimawesome.com/plugin/vim-gitgutter
 
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
