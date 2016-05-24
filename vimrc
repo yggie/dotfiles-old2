@@ -323,6 +323,9 @@ function TmuxRun(cmd)
   redraw!
 endfunction
 
+" ====[ Shell Helpers ]====
+nmap <Leader>RT :call TmuxRun('')<Left><Left>|                            " Helper to bring up the TmuxRun command with a customizable command
+
 " ====[ Ruby Helpers ]====
 nnoremap <Leader>RR :call TmuxRun('bundle exec rspec %')<CR>|             " Run the current spec
 
