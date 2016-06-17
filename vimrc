@@ -234,6 +234,10 @@ let g:syntastic_check_on_wq = 0                             " Skip Syntastic whe
 let g:syntastic_html_tidy_exec = "tidy5"
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute ", "trimming empty <", "lacks \"action\"", "> is not recognized!", "discarding unexpected", "<img> lacks \"src\"", "unescaped &", "\"id\" has invalid value"]
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_error_symbol = '»»'
+let g:syntastic_style_error_symbol = 's»'
+let g:syntastic_warning_symbol = '⟫⟫'
+let g:syntastic_style_warning_symbol = 's⟫'
 
 " ====[ Airline ]====
 " see: https://coderwall.com/p/yiot4q/setup-vim-powerline-and-iterm2-on-mac-os-x
@@ -322,7 +326,7 @@ nnoremap <Leader>f :NERDTreeFind<CR>|                                     " Open
 
 " Runs the command in a new tmux window and keeps Vim in its current state
 function TmuxRun(cmd)
-  execute 'silent !tmux new-window -k -n"' . a:cmd . '" -t:0 "' . a:cmd . '; bash -c ''read -t 1 -n 10000 discard; read -p\"Done, Press any key to close the tmux window\" -n 1 -s''"'
+  execute 'silent !tmux new-window -k -n"' . a:cmd . '" -c "\#{pane_current_path}" -t:0 "' . a:cmd . '; bash -c ''read -t 1 -n 10000 discard; read -p\"Done, Press any key to close the tmux window\" -n 1 -s''"'
   redraw!
 endfunction
 
