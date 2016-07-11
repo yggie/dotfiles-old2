@@ -55,7 +55,7 @@ Plugin 'elixir-lang/vim-elixir'                 " Syntax highlighting for ex, ex
 Plugin 'tikhomirov/vim-glsl'                    " Vim syntax highlighting for OpenGL Shading Language
 Plugin 'janko-m/vim-test'                       " Runs tests
 Plugin 'wellle/targets.vim'                     " More Vim text objects, works on arguments and delimited texts
-" Plugin 'atelierbram/vim-colors_duotones'        " The duotones color scheme
+Plugin 'atelierbram/vim-colors_duotones'        " The duotones color scheme
 Plugin 'airblade/vim-gitgutter'                 " Shows where the git diffs are
 
 " All of your Plugins must be added before the following line
@@ -108,12 +108,27 @@ syntax enable                                   " Enable syntax highlighting
 set encoding=utf-8
 set t_Co=256
 set termencoding=utf-8
+
+" " Colorscheme Solarized
+" set background=dark
+" colorscheme solarized
+" highlight clear SignColumn
+" exec "highlight ColorColumn    cterm=NONE ctermfg=196"
+
+" Colorscheme Duotone-Darkspace
 set background=dark
-colorscheme solarized
-" colorscheme base16-duotone-dark
+colorscheme duotone-darkspace
 highlight clear SignColumn
-exec "hi ColorColumn    cterm=NONE ctermfg=196"
-" hi Visual ctermbg=24 guibg=24
+highlight CursorLine     				ctermbg=238
+highlight ColorColumn    				cterm=NONE ctermfg=196 ctermbg=238
+highlight CursorLineNr   				ctermbg=238
+highlight CursorColumn   				ctermbg=238
+highlight GitGutterAdd 					ctermbg=000
+highlight GitGutterChange 			ctermbg=000
+highlight GitGutterDelete 			ctermbg=000
+highlight GitGutterChangeDelete ctermbg=000
+
+" highlight Visual ctermbg=24 guibg=24
 
 set wildmode=longest,list                       " Tab completion shows the list of potential matches
 
