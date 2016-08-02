@@ -109,24 +109,24 @@ set encoding=utf-8
 set t_Co=256
 set termencoding=utf-8
 
-" " Colorscheme Solarized
-" set background=dark
-" colorscheme solarized
-" highlight clear SignColumn
-" exec "highlight ColorColumn    cterm=NONE ctermfg=196"
-
-" Colorscheme Duotone-Darkspace
+" Colorscheme Solarized
 set background=dark
-colorscheme duotone-darkspace
+colorscheme solarized
 highlight clear SignColumn
-highlight CursorLine     				ctermbg=238
-highlight ColorColumn    				cterm=NONE ctermfg=196 ctermbg=238
-highlight CursorLineNr   				ctermbg=238
-highlight CursorColumn   				ctermbg=238
-highlight GitGutterAdd 					ctermbg=000
-highlight GitGutterChange 			ctermbg=000
-highlight GitGutterDelete 			ctermbg=000
-highlight GitGutterChangeDelete ctermbg=000
+exec "highlight ColorColumn    cterm=NONE ctermfg=196"
+
+" " Colorscheme Duotone-Darkspace
+" set background=dark
+" colorscheme duotone-darkspace
+" highlight clear SignColumn
+" highlight CursorLine     				ctermbg=238
+" highlight ColorColumn    				cterm=NONE ctermfg=196 ctermbg=238
+" highlight CursorLineNr   				ctermbg=238
+" highlight CursorColumn   				ctermbg=238
+" highlight GitGutterAdd 					ctermbg=000
+" highlight GitGutterChange 			ctermbg=000
+" highlight GitGutterDelete 			ctermbg=000
+" highlight GitGutterChangeDelete ctermbg=000
 
 " highlight Visual ctermbg=24 guibg=24
 
