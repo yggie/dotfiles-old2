@@ -151,7 +151,7 @@ set nobackup
 set nowb
 
 " Because color matters
-autocmd BufRead,BufNewFile *jshintrc,*bowerrc set filetype=json
+autocmd BufRead,BufNewFile *jshintrc,*bowerrc,*babelrc set filetype=json
 autocmd BufRead,BufNewFile *Gemfile*,Vagrantfile,Guardfile,*pryrc set filetype=ruby
 autocmd BufRead,BufNewFile *eslintrc,*Procfile set filetype=yaml
 autocmd BufRead,BufNewFile *Dockerfile* set filetype=dockerfile
