@@ -40,5 +40,8 @@ alias ls="ls --color=always"
 alias grep="grep --color=always"
 alias egrep="egrep --color=always"
 
+# Rust development
+set PATH ~/.cargo/bin/ $PATH
+
 # Android Development
 set PATH ~/Library/Android/sdk/platform-tools/ $PATH
