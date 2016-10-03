@@ -40,6 +40,12 @@ alias ls="ls --color=always"
 alias grep="grep --color=always"
 alias egrep="egrep --color=always"
 
+# Add SSH keys from the OS X keychain if it isn't running
+if [ (ssh-add -l | grep -c '\d') = 0 ]
+  echo "No SSH keys initialized, adding default SSH keys authenticated through the OSX keychain"
+  ssh-add -K
+end
+
 # Rust development
 set PATH ~/.cargo/bin/ $PATH
 
