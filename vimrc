@@ -264,7 +264,7 @@ let g:airline_section_b = '%{&ft}'                          " Hides the git bran
 autocmd BufEnter * call EnableEmmetIfHtml()                 " Optionally enable intelligent Emmet expansion
 
 function EnableEmmetIfHtml()
-  if &ft =~ 'html' || &ft =~ 'eruby' || &ft =~ 'javascript' || &ft =~ 'eelixir'
+  if &ft =~ 'html' || &ft =~ 'eruby' || &ft =~ 'javascript' || &ft =~ 'eelixir' || &ft =~ 'svg'
     imap <expr><C-e> emmet#expandAbbrIntelligent("\<Tab>")
   else
     imap <expr><C-e> "\<C-e>"
