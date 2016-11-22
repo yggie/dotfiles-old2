@@ -83,7 +83,7 @@ rules:
   no-shadow: 2
   no-undef-init: 2
   no-unused-vars: [2, {'vars': 'all', 'args': 'after-used'}]
-  no-use-before-define: 2
+  no-use-before-define: 0
 
   # NODE.JS
   handle-callback-err: 2
