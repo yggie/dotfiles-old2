@@ -62,6 +62,8 @@ Plugin 'janko-m/vim-test'                       " Runs tests
 Plugin 'wellle/targets.vim'                     " More Vim text objects, works on arguments and delimited texts
 Plugin 'atelierbram/vim-colors_duotones'        " The duotones color scheme
 Plugin 'airblade/vim-gitgutter'                 " Shows where the git diffs are
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -291,6 +293,9 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 " "}}}
 " Tmux Navigator {{{
 let g:tmux_navigator_no_mappings = 1
+" }}}
+" Limelight {{{
+let g:limelight_conceal_ctermfg = 0
 " }}}
 " }}}
 " Custom Key Bindings {{{
