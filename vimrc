@@ -13,17 +13,22 @@
 set nocompatible              " be iMproved, required
 set ttyfast
 set lazyredraw
+set foldmethod=marker
+set foldlevel=0
+set modelines=1
 filetype off                  " required
 
+" Plugins {{{
+" ############################################################################ "
+"                               Plugins
+" ############################################################################ "
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
 Plugin 'tpope/vim-fugitive'                     " Git plugin
 Plugin 'scrooloose/nerdtree'                    " A tree explorer plugin for vim
 Plugin 'tpope/vim-surround'                     " quoting/parenthesizing made simple
@@ -72,8 +77,8 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-
+" }}}
+" General Editor Configurations {{{
 " ############################################################################ "
 "                           General Configurations
 " ############################################################################ "
@@ -109,27 +114,6 @@ set encoding=utf-8
 set t_Co=256
 set termencoding=utf-8
 
-" Colorscheme Solarized
-set background=dark
-colorscheme solarized
-highlight clear SignColumn
-exec "highlight ColorColumn    cterm=NONE ctermfg=196"
-
-" " Colorscheme Duotone-Darkspace
-" set background=dark
-" colorscheme duotone-darkspace
-" highlight clear SignColumn
-" highlight CursorLine     				ctermbg=238
-" highlight ColorColumn    				cterm=NONE ctermfg=196 ctermbg=238
-" highlight CursorLineNr   				ctermbg=238
-" highlight CursorColumn   				ctermbg=238
-" highlight GitGutterAdd 					ctermbg=000
-" highlight GitGutterChange 			ctermbg=000
-" highlight GitGutterDelete 			ctermbg=000
-" highlight GitGutterChangeDelete ctermbg=000
-
-" highlight Visual ctermbg=24 guibg=24
-
 set wildmode=longest,list                       " Tab completion shows the list of potential matches
 
 set visualbell                                  " Turn off error bell
@@ -157,10 +141,38 @@ autocmd BufRead,BufNewFile *eslintrc,*Procfile set filetype=yaml
 autocmd BufRead,BufNewFile *Dockerfile* set filetype=dockerfile
 autocmd BufRead,BufNewFile mix.lock set filetype=elixir
 autocmd BufRead,BufNewFile *Makefile set noexpandtab
+autocmd BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,nginx.conf if &ft == '' | setfiletype nginx | endif
 
 " And so does space
 autocmd Filetype glsl setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
+" }}}
+" Colorscheme {{{
+" ############################################################################ "
+"                               Colorscheme
+" ############################################################################ "
+" Colorscheme Solarized
+set background=dark
+colorscheme solarized
+highlight clear SignColumn
+exec "highlight ColorColumn    cterm=NONE ctermfg=196"
+
+" " Colorscheme Duotone-Darkspace
+" set background=dark
+" colorscheme duotone-darkspace
+" highlight clear SignColumn
+" highlight CursorLine     				ctermbg=238
+" highlight ColorColumn    				cterm=NONE ctermfg=196 ctermbg=238
+" highlight CursorLineNr   				ctermbg=238
+" highlight CursorColumn   				ctermbg=238
+" highlight GitGutterAdd 					ctermbg=000
+" highlight GitGutterChange 			ctermbg=000
+" highlight GitGutterDelete 			ctermbg=000
+" highlight GitGutterChangeDelete ctermbg=000
+
+" highlight Visual ctermbg=24 guibg=24
+" }}}
+" Custom Functions {{{
 " ############################################################################ "
 "                             Custom Functions
 " ############################################################################ "
@@ -211,18 +223,12 @@ function! ToggleErrors()
         Errors
     endif
 endfunction
-
-
+" }}}
+" Plugin configurations {{{
 " ############################################################################ "
-"                         Plugin Configurations
+"                           Plugin configurations
 " ############################################################################ "
-
-
-" ====[ nginx ]====
-au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,nginx.conf if &ft == '' | setfiletype nginx | endif
-
-
-" ====[ CtrlP ]====
+" CtrlP {{{
 let g:ctrlp_by_filename = 1                                 " Grep by filename by default
 let g:ctrlp_switch_buffer = 0
 if executable('ag')
@@ -235,11 +241,11 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
-
-" ====[ Ag ]====
+" }}}
+" Ag {{{
 let g:ag_highlight = 1
-
-" ====[ Syntastic ]====
+" }}}
+" Syntastic {{{
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -253,14 +259,14 @@ let g:syntastic_error_symbol = '»»'
 let g:syntastic_style_error_symbol = 's»'
 let g:syntastic_warning_symbol = '⟫⟫'
 let g:syntastic_style_warning_symbol = 's⟫'
-
-" ====[ Airline ]====
+" }}}
+" Airline {{{
 " see: https://coderwall.com/p/yiot4q/setup-vim-powerline-and-iterm2-on-mac-os-x
 set laststatus=2                                            " Enable the Airline in single Vim panes
 let g:airline_powerline_fonts = 1                           " Enable Powerline fonts
 let g:airline_section_b = '%{&ft}'                          " Hides the git branch name (my branch names tend to be too long)
-
-" ====[ Emmet ]====
+" }}}
+" Emmet {{{
 autocmd BufEnter * call EnableEmmetIfHtml()                 " Optionally enable intelligent Emmet expansion
 
 function EnableEmmetIfHtml()
@@ -270,8 +276,8 @@ function EnableEmmetIfHtml()
     imap <expr><C-e> "\<C-e>"
   endif
 endfunction
-
-" ====[ Neocomplete ]====
+" }}}
+" Neocomplete {{{
 let g:acp_enableAtStartup = 0                                 " Disable default auto-complete
 let g:neocomplete#enable_at_startup = 1                       " Use neocomplete
 let g:neocomplete#enable_smart_case = 1                       " Use smartcase
@@ -279,10 +285,15 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3       " Set minimum synt
 inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"       " Enable tab completion for neocomplete
 inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"   " Tab completion in reverse
 
-" ====[ Tmux Navigator ]====
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+" "}}}
+" Tmux Navigator {{{
 let g:tmux_navigator_no_mappings = 1
-
-
+" }}}
+" }}}
+" Custom Key Bindings {{{
 " ############################################################################ "
 "                             Custom Key Bindings
 " ############################################################################ "
@@ -382,3 +393,6 @@ inoremap <Left> <C-o>:throw " Vim Tip #5: Always leave insert mode before trying
 inoremap <Right> <C-o>:throw " Vim Tip #5: Always leave insert mode before trying to navigate"<CR>
 inoremap <Up> <C-o>:throw " Vim Tip #5: Always leave insert mode before trying to navigate"<CR>
 inoremap <Down> <C-o>:throw " Vim Tip #5: Always leave insert mode before trying to navigate"<CR>
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
