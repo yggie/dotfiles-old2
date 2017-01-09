@@ -26,10 +26,11 @@ if [ (ssh-add -l | grep -c '\d') = 0 ]
 end
 
 # Ruby development {{{
-# Load rbenv, see: https://coderwall.com/p/hmousw/using-rbenv-with-fish-the-right-way
-# set -gx RBENV_ROOT /usr/local/var/rbenv
-if command -v foo >/dev/null 2>&1
-  . (rbenv init -|psub)
+# Load rbenv automatically by appending
+# the following to ~/.config/fish/config.fish:
+
+if type rbenv > /dev/null
+  status --is-interactive; and source (rbenv init -|psub)
 end
 # }}}
 # Rust development {{{
