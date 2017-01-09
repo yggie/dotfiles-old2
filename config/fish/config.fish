@@ -34,12 +34,12 @@ if type rbenv > /dev/null
 end
 # }}}
 # Rust development {{{
-if test -e ~/.cargo/bin/
-  set PATH ~/.cargo/bin/ $PATH
+if test -e ~/.cargo/bin
+  set PATH ~/.cargo/bin $PATH
 end
 # }}}
 # Android Development {{{
-if test -e ~/Library/Android/sdk/platform-tools/
-  set PATH ~/Library/Android/sdk/platform-tools/ $PATH
+if test -e ~/Library/Android/sdk/platform-tools
+  set PATH ~/Library/Android/sdk/platform-tools $PATH
 end
 # }}}
