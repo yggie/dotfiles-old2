@@ -60,6 +60,7 @@ following commands:
 ```
 cd ~/
 git clone https://github.com/yggie/dotfiles.git .dotfiles
+cd ./.dotfiles
 rcup -v -x LICENSE -x README.md
 ```
 
