@@ -14,5 +14,3 @@
 	gpgsign = true
 [diff]
 	compactionHeuristic = true
-[gpg]
-	program = /usr/local/bin/gpg1

@@ -37,7 +37,8 @@ Additional dependencies that don’t come with the box:
 * [Powerline fonts](https://github.com/powerline/fonts) – for the fancy
   powerline
 * [eslint](https://github.com/eslint/eslint) - JavaScript syntax checker
-
+* [oh-my-fish (optional)](https://github.com/oh-my-fish/oh-my-fish) - Manage the
+  fish shell themes. Currently using `fox` as the preferred theme.
 
 **NOTE**: If you are on Mac OS X, you will also need GNU Coreutils, which can be
 easily installed with HomeBrew:
