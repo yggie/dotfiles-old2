@@ -374,6 +374,7 @@ nnoremap <Leader>KR :call TmuxRun('karma run')<CR>|                       " Run 
 " ====[ Rust Helpers ]====
 nnoremap <Leader>CB :call TmuxRun('cargo build')<CR>|                     " Executes cargo build
 nnoremap <Leader>CT :call TmuxRun('cargo test')<CR>|                      " Executes cargo test
+nnoremap <Leader>CD :call TmuxRun('cargo doc')<CR>|                       " Executes cargo doc
 nnoremap <Leader>CR :call TmuxRun('cargo run')<CR>|                       " Executes cargo run
 nnoremap <Leader>CE :call TmuxRun('cargo run --example ""')<Left><Left><Left>|  " Executes cargo run
 
