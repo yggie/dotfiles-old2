@@ -41,7 +41,7 @@ Plugin 'othree/html5.vim'                       " HTML5 autocomplete and syntax
 Plugin 'hail2u/vim-css3-syntax'                 " Vim syntax file for SCSS and improved CSS syntax highlighting
 Plugin 'tpope/vim-rails'                        " Ruby on Rails power tools
 Plugin 'tomtom/tcomment_vim'                    " An extensible & universal comment vim-plugin that also handles embedded filetypes
-Plugin 'scrooloose/syntastic'                   " Syntax check hacks for Vim
+Plugin 'w0rp/ale'                               " An asynchronous linting engine
 Plugin 'rking/ag.vim'                           " Vim plugin to search using the silver searcher (ag)
 Plugin 'cespare/vim-toml'                       " Syntax highlighting for TOML files
 Plugin 'Shougo/neocomplete.vim'                 " Code completion engine
@@ -247,26 +247,20 @@ endif
 " Ag {{{
 let g:ag_highlight = 1
 " }}}
-" Syntastic {{{
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1                " Populate the locations list with the warnings
-let g:syntastic_check_on_open = 1                           " Run Syntastic when opening a file
-let g:syntastic_check_on_wq = 0                             " Skip Syntastic when closing a file
-let g:syntastic_html_tidy_exec = "tidy5"
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute ", "trimming empty <", "lacks \"action\"", "> is not recognized!", "discarding unexpected", "<img> lacks \"src\"", "unescaped &", "\"id\" has invalid value"]
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_error_symbol = '»»'
-let g:syntastic_style_error_symbol = 's»'
-let g:syntastic_warning_symbol = '⟫⟫'
-let g:syntastic_style_warning_symbol = 's⟫'
+" Ale {{{
+let g:ale_sign_error = '»⨉'
+let g:ale_sign_warning = '»⚠'
+" Use :help ale-integration-rust to find out why Rust is setup this way
+let g:ale_linters = {
+      \'rust': ['rustc'],
+      \'javascript': ['eslint']
+      \}
+let g:ale_rust_ignore_error_codes = ['E0432']
 " }}}
 " Airline {{{
 " see: https://coderwall.com/p/yiot4q/setup-vim-powerline-and-iterm2-on-mac-os-x
 set laststatus=2                                            " Enable the Airline in single Vim panes
 let g:airline_powerline_fonts = 1                           " Enable Powerline fonts
-let g:airline_section_b = '%{&ft}'                          " Hides the git branch name (my branch names tend to be too long)
 " }}}
 " Emmet {{{
 autocmd BufEnter * call EnableEmmetIfHtml()                 " Optionally enable intelligent Emmet expansion
