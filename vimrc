@@ -62,6 +62,7 @@ Plugin 'janko-m/vim-test'                       " Runs tests
 Plugin 'wellle/targets.vim'                     " More Vim text objects, works on arguments and delimited texts
 Plugin 'atelierbram/vim-colors_duotones'        " The duotones color scheme
 Plugin 'airblade/vim-gitgutter'                 " Shows where the git diffs are
+Plugin 'marijnh/tern_for_vim'                   " Tern plugin for VIM
 Plugin 'majutsushi/tagbar'                      " Vim plugin that displays tags in a window
 Plugin 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons
 Plugin 'junegunn/goyo.vim'
@@ -219,14 +220,16 @@ function! GetVisual() range
 endfunction
 
 
-function! ToggleErrors()
+function! ToggleLocList()
     let old_last_winnr = winnr('$')
     lclose
     if old_last_winnr == winnr('$')
         " Nothing was closed, open syntastic error location panel
-        Errors
+        exec('lopen')
+        wincmd p
     endif
 endfunction
+
 " }}}
 " Plugin configurations {{{
 " ############################################################################ "
@@ -250,7 +253,7 @@ endif
 let g:ag_highlight = 1
 " }}}
 " Ale {{{
-let g:ale_sign_error = '⨉»'
+let g:ale_sign_error = '×»'
 let g:ale_sign_warning = '⚠»'
 " Use :help ale-integration-rust to find out why Rust is setup this way
 let g:ale_linters = {
@@ -295,6 +298,21 @@ let g:limelight_conceal_ctermfg = 0
 " }}}
 " Devicons {{{
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+" }}}
+" Tagbar {{{
+let g:tagbar_type_rust = {
+   \ 'ctagstype' : 'rust',
+   \ 'kinds' : [
+       \'T:types,type definitions',
+       \'f:functions,function definitions',
+       \'g:enum,enumeration names',
+       \'s:structure names',
+       \'m:modules,module names',
+       \'c:consts,static constants',
+       \'t:traits,traits',
+       \'i:impls,trait implementations',
+   \]
+   \}
 " }}}
 " }}}
 " Custom Key Bindings {{{
@@ -346,7 +364,8 @@ nnoremap <C-j> :TmuxNavigateDown<CR>|                                     " Shor
 nnoremap <C-k> :TmuxNavigateUp<CR>|                                       " Shortcut to switch to top pane
 
 nnoremap <Leader>p :set invpaste paste?<CR>|                              " Toggle paste mode
-nnoremap <Leader>l :<C-u>call ToggleErrors()<CR>|                         " Toggle locations list
+nnoremap <Leader>l :<C-u>call ToggleLocList()<CR>|                        " Toggle locations list
+nnoremap <Leader>m :TagbarToggle<CR>|                                     " Toggle Tagbar
 
 nnoremap vv :vsplit<CR>|                                                  " Shortcut for :vsplit
 nnoremap ss :split<CR>|                                                   " Shortcut for :split
