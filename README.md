@@ -34,8 +34,10 @@ Additional dependencies that don’t come with the box:
   [neocomplete](https://github.com/Shougo/neocomplete.vim) plugin)
 * [Vundle](https://github.com/gmarik/Vundle.vim)
 * [tmux](http://tmux.sourceforge.net/)
-* [Powerline fonts](https://github.com/powerline/fonts) – for the fancy
-  powerline
+* [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) – for the fancy devicons
+that appears in the NERDtree and airline status bar. Currently using
+[InconsolataGo](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/InconsolataGo)
+as the preferred font
 * [eslint](https://github.com/eslint/eslint) - JavaScript syntax checker
 * [oh-my-fish (optional)](https://github.com/oh-my-fish/oh-my-fish) - Manage the
   fish shell themes. Currently using `fox` as the preferred theme.
@@ -61,7 +63,7 @@ following commands:
 cd ~/
 git clone https://github.com/yggie/dotfiles.git .dotfiles
 cd ./.dotfiles
-rcup -v -x LICENSE -x README.md
+./install.sh
 ```
 
 And of course, install the vim plugins:

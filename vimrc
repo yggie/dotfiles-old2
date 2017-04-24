@@ -62,6 +62,8 @@ Plugin 'janko-m/vim-test'                       " Runs tests
 Plugin 'wellle/targets.vim'                     " More Vim text objects, works on arguments and delimited texts
 Plugin 'atelierbram/vim-colors_duotones'        " The duotones color scheme
 Plugin 'airblade/vim-gitgutter'                 " Shows where the git diffs are
+Plugin 'majutsushi/tagbar'                      " Vim plugin that displays tags in a window
+Plugin 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 
@@ -248,14 +250,14 @@ endif
 let g:ag_highlight = 1
 " }}}
 " Ale {{{
-let g:ale_sign_error = '»⨉'
-let g:ale_sign_warning = '»⚠'
+let g:ale_sign_error = '⨉»'
+let g:ale_sign_warning = '⚠»'
 " Use :help ale-integration-rust to find out why Rust is setup this way
 let g:ale_linters = {
       \'rust': ['rustc'],
       \'javascript': ['eslint']
       \}
-let g:ale_rust_ignore_error_codes = ['E0432']
+let g:ale_rust_ignore_error_codes = ['E0432', 'E0583']          " ignores 'Unresolved import' and 'File not found' errors respectively because of the limitation of the rustc linter
 " }}}
 " Airline {{{
 " see: https://coderwall.com/p/yiot4q/setup-vim-powerline-and-iterm2-on-mac-os-x
@@ -290,6 +292,9 @@ let g:tmux_navigator_no_mappings = 1
 " }}}
 " Limelight {{{
 let g:limelight_conceal_ctermfg = 0
+" }}}
+" Devicons {{{
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 " }}}
 " }}}
 " Custom Key Bindings {{{
