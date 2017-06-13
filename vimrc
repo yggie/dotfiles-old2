@@ -256,8 +256,9 @@ let g:ag_highlight = 1
 let g:ale_sign_error = '×»'
 let g:ale_sign_warning = '⚠»'
 " Use :help ale-integration-rust to find out why Rust is setup this way
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
-      \'rust': ['rustc'],
+      \'rust': ['cargo'],
       \'javascript': ['eslint']
       \}
 let g:ale_rust_ignore_error_codes = ['E0432', 'E0583']          " ignores 'Unresolved import' and 'File not found' errors respectively because of the limitation of the rustc linter
@@ -297,7 +298,7 @@ let g:tmux_navigator_no_mappings = 1
 let g:limelight_conceal_ctermfg = 0
 " }}}
 " Devicons {{{
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
 " }}}
 " Tagbar {{{
 let g:tagbar_type_rust = {
