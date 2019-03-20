@@ -62,11 +62,15 @@ Plugin 'janko-m/vim-test'                       " Runs tests
 Plugin 'wellle/targets.vim'                     " More Vim text objects, works on arguments and delimited texts
 Plugin 'atelierbram/vim-colors_duotones'        " The duotones color scheme
 Plugin 'airblade/vim-gitgutter'                 " Shows where the git diffs are
-Plugin 'marijnh/tern_for_vim'                   " Tern plugin for VIM
-Plugin 'majutsushi/tagbar'                      " Vim plugin that displays tags in a window
+" Plugin 'marijnh/tern_for_vim'                   " Tern plugin for VIM
+" Plugin 'majutsushi/tagbar'                      " Vim plugin that displays tags in a window
 Plugin 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
+Plugin 'leafgarland/typescript-vim'             " Adds syntax highlighting for TypeScript (.ts) files
+Plugin 'ianks/vim-tsx'                          " Adds support for tsx files
+Plugin 'hashivim/vim-terraform'                 " Adds support for terraform files, including some shortcuts to run terraform commands
+Plugin 'quramy/tsuquyomi'                       " Adds tsc support
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -147,9 +151,15 @@ autocmd BufRead,BufNewFile *Dockerfile* set filetype=dockerfile
 autocmd BufRead,BufNewFile mix.lock set filetype=elixir
 autocmd BufRead,BufNewFile *Makefile set noexpandtab
 autocmd BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,nginx.conf if &ft == '' | setfiletype nginx | endif
+autocmd BufRead,BufNewFile *.tsx setlocal filetype=typescript.tsx
 
 " And so does space
 autocmd Filetype glsl setlocal tabstop=4 softtabstop=4 shiftwidth=4
+
+augroup FiletypeGroup
+  autocmd!
+  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
 
 " }}}
 " Colorscheme {{{
@@ -258,6 +268,8 @@ let g:ale_sign_warning = '⚠»'
 " Use :help ale-integration-rust to find out why Rust is setup this way
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
+      \'typescript': ['tslint'],
+      \'jsx': ['eslint'],
       \'rust': ['cargo'],
       \'javascript': ['eslint']
       \}
@@ -272,7 +284,7 @@ let g:airline_powerline_fonts = 1                           " Enable Powerline f
 autocmd BufEnter * call EnableEmmetIfHtml()                 " Optionally enable intelligent Emmet expansion
 
 function EnableEmmetIfHtml()
-  if &ft =~ 'html' || &ft =~ 'eruby' || &ft =~ 'javascript' || &ft =~ 'eelixir' || &ft =~ 'svg'
+  if &ft =~ 'html' || &ft =~ 'eruby' || &ft =~ 'javascript' || &ft =~ 'eelixir' || &ft =~ 'svg' || &ft =~ 'typescript'
     imap <expr><C-e> emmet#expandAbbrIntelligent("\<Tab>")
   else
     imap <expr><C-e> "\<C-e>"
@@ -315,6 +327,15 @@ let g:tagbar_type_rust = {
    \]
    \}
 " }}}
+
+" Tsuquyomi {{{
+let g:tsuquyomi_disable_quickfix = 1
+" }}}
+
+" Syntastic {{{
+let g:syntastic_typescript_checkers = ['tsuquyomi']
+" }}}
+
 " }}}
 " Custom Key Bindings {{{
 " ############################################################################ "
