@@ -1,4 +1,5 @@
 # Use the colorful version of grep
+set PATH /usr/local/bin $PATH
 alias grep="grep --color"
 alias tree="tree -C"
 
@@ -42,6 +43,13 @@ if test -e ~/Library/Android/sdk/platform-tools
   set PATH ~/Library/Android/sdk/platform-tools $PATH
 end
 # }}}
+# Vulkan Development {{{
+set -x VULKAN_SDK ~/vulkansdk-macos/macOS
+set PATH $VULKAN_SDK/bin $PATH
+set -x DYLD_LIBRARY_PATH $VULKAN_SDK/lib $DYLD_LIBRARY_PATH
+set -x VK_ICD_FILENAMES $VULKAN_SDK/share/vulkan/icd.d/MoltenVK_icd.json
+set -x VK_LAYER_PATH $VULKAN_SDK/share/vulkan/explicit_layer.d
+ #}}}
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`

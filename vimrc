@@ -39,20 +39,20 @@ Plugin 'bling/vim-airline'                      " Lean & mean status/tabline for
 Plugin 'mattn/emmet-vim'                        " Emmet for Vim
 Plugin 'othree/html5.vim'                       " HTML5 autocomplete and syntax
 Plugin 'hail2u/vim-css3-syntax'                 " Vim syntax file for SCSS and improved CSS syntax highlighting
-Plugin 'tpope/vim-rails'                        " Ruby on Rails power tools
 Plugin 'tomtom/tcomment_vim'                    " An extensible & universal comment vim-plugin that also handles embedded filetypes
 Plugin 'w0rp/ale'                               " An asynchronous linting engine
 Plugin 'rking/ag.vim'                           " Vim plugin to search using the silver searcher (ag)
 Plugin 'cespare/vim-toml'                       " Syntax highlighting for TOML files
-Plugin 'Shougo/neocomplete.vim'                 " Code completion engine
-Plugin 'tpope/vim-endwise'                      " Wisely add “end” in Ruby
-Plugin 'Raimondi/delimitMate'                   " Add closing delimiters automagically
+Plugin 'Shougo/deoplete.nvim'                   " Code completion
+Plugin 'roxma/nvim-yarp'                        " Required for deoplete
+Plugin 'roxma/vim-hug-neovim-rpc'               " Required for deoplete
+Plugin 'raimondi/delimitmate'                   " Add closing delimiters automagically
 Plugin 'groenewege/vim-less'                    " Syntax highlighting for LESS
 Plugin 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and splits
 Plugin 'nginx.vim'                              " Nginx config syntax highlighting
 Plugin 'pangloss/vim-javascript'                " Improves JavaScript syntax and indenting
 Plugin 'mxw/vim-jsx'                            " Syntax highlighting and indenting for jsx
-Plugin 'matchit.zip'                            " Extend % matching to support more than one character
+Plugin 'andymass/vim-matchup'                   " Extend % matching to support more than one character
 Plugin 'Lokaltog/vim-easymotion'                " Vim motions on speed!
 Plugin 'sophacles/vim-processing'               " Develop Processing sketches on Vim!
 Plugin 'tpope/vim-abolish'                      " Easily search for, substitute and abbreviate multiple variants of a word
@@ -71,6 +71,8 @@ Plugin 'leafgarland/typescript-vim'             " Adds syntax highlighting for T
 Plugin 'ianks/vim-tsx'                          " Adds support for tsx files
 Plugin 'hashivim/vim-terraform'                 " Adds support for terraform files, including some shortcuts to run terraform commands
 Plugin 'quramy/tsuquyomi'                       " Adds tsc support
+
+let g:deoplete#enable_at_startup = 1
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
