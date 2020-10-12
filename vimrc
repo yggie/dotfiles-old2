@@ -172,6 +172,7 @@ augroup END
 set background=dark
 colorscheme solarized
 highlight clear SignColumn
+highlight Normal ctermfg=grey ctermbg=black
 exec "highlight ColorColumn    cterm=NONE ctermfg=196"
 
 " " Colorscheme Duotone-Darkspace
