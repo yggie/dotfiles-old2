@@ -25,13 +25,17 @@ if [ (ssh-add -l | grep -c '\d') = 0 ]
   ssh-add -K
 end
 
+set NVM_DIR "~/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 # Ruby development {{{
 # Load rbenv automatically by appending
 # the following to ~/.config/fish/config.fish:
 
-if type rbenv > /dev/null
-  status --is-interactive; and source (rbenv init -|psub)
-end
+# Ruby no longer used
+# if type rbenv > /dev/null
+#   status --is-interactive; and source (rbenv init -|psub)
+# end
 # }}}
 # Rust development {{{
 if test -e ~/.cargo/bin
@@ -39,16 +43,17 @@ if test -e ~/.cargo/bin
 end
 # }}}
 # Android Development {{{
-if test -e ~/Library/Android/sdk/platform-tools
-  set PATH ~/Library/Android/sdk/platform-tools $PATH
-end
+# if test -e ~/Library/Android/sdk/platform-tools
+#   set PATH ~/Library/Android/sdk/platform-tools $PATH
+# end
 # }}}
 # Vulkan Development {{{
-set -x VULKAN_SDK ~/vulkansdk-macos/macOS
-set PATH $VULKAN_SDK/bin $PATH
-set -x DYLD_LIBRARY_PATH $VULKAN_SDK/lib $DYLD_LIBRARY_PATH
-set -x VK_ICD_FILENAMES $VULKAN_SDK/share/vulkan/icd.d/MoltenVK_icd.json
-set -x VK_LAYER_PATH $VULKAN_SDK/share/vulkan/explicit_layer.d
+# Not using Vulkan actively yet
+# set -x VULKAN_SDK ~/vulkansdk-macos/macOS
+# set PATH $VULKAN_SDK/bin $PATH
+# set -x DYLD_LIBRARY_PATH $VULKAN_SDK/lib $DYLD_LIBRARY_PATH
+# set -x VK_ICD_FILENAMES $VULKAN_SDK/share/vulkan/icd.d/MoltenVK_icd.json
+# set -x VK_LAYER_PATH $VULKAN_SDK/share/vulkan/explicit_layer.d
  #}}}
 
 # tabtab source for serverless package

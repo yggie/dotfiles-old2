@@ -44,8 +44,8 @@ Plugin 'w0rp/ale'                               " An asynchronous linting engine
 Plugin 'rking/ag.vim'                           " Vim plugin to search using the silver searcher (ag)
 Plugin 'cespare/vim-toml'                       " Syntax highlighting for TOML files
 Plugin 'Shougo/deoplete.nvim'                   " Code completion
-Plugin 'roxma/nvim-yarp'                        " Required for deoplete
 Plugin 'roxma/vim-hug-neovim-rpc'               " Required for deoplete
+Plugin 'roxma/nvim-yarp'                        " Required for deoplete
 Plugin 'raimondi/delimitmate'                   " Add closing delimiters automagically
 Plugin 'groenewege/vim-less'                    " Syntax highlighting for LESS
 Plugin 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and splits
@@ -172,8 +172,8 @@ augroup END
 set background=dark
 colorscheme solarized
 highlight clear SignColumn
-highlight Normal ctermfg=14 ctermbg=0
-highlight Visual ctermfg=8 ctermbg=0
+highlight Normal ctermfg=14 ctermbg=256
+highlight Visual ctermfg=8 ctermbg=256
 exec "highlight ColorColumn    cterm=NONE ctermfg=196"
 
 " " Colorscheme Duotone-Darkspace

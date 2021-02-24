@@ -1,6 +1,7 @@
 [user]
 	name = Bryan Yap
 	email = bryan.yap.mh@gmail.com
+	signingKey = 9F1DF7478A646C774F7614814E3203B28AF8C2B0
 [core]
 	editor = vim
 	excludesfile = ~/.dotfiles/gitignore_global
@@ -15,4 +16,4 @@
 [diff]
 	compactionHeuristic = true
 [gpg]
-	program = gpg
+	program = /usr/local/bin/gpg
