@@ -11,14 +11,14 @@ Currently the dotfiles contain the following configuration files:
   editor, which is without a doubt the best editor in existence.
 * `tmux.conf` – Configuration for [tmux](http://tmux.sourceforge.net/) for
   terminal multiplexing.
-* `config.fish` – Configuration for my [fish shell](http://fishshell.com/).
+* `zshrc` – Configuration for my [zsh](https://ohmyz.sh/).
 * `eslintrc` – Configuration for `eslint`.
 * `dircolors` – Color configuration for GNU Coreutils commands.
 
 ## Compatibility
 
 This is my personal setup, so it has currently only been tested on Mac OSX
-Yosemite.
+Big Sur
 
 ## Dependencies
 
@@ -29,18 +29,12 @@ do not wish to use rcm, you can always fallback to good old *copy-and-paste*.
 Additional dependencies that don’t come with the box:
 
 * [git](http://git-scm.com/)
-* [fish shell](http://fishshell.com/)
-* Vim compiled with Lua support (for
-  [neocomplete](https://github.com/Shougo/neocomplete.vim) plugin)
-* [Vundle](https://github.com/gmarik/Vundle.vim)
+* Vim compiled with python3 support (for
+  [deoplete](https://github.com/Shougo/deoplete.nvim) plugin)
+* [vim-plug](https://github.com/junegunn/vim-plug)
 * [tmux](http://tmux.sourceforge.net/)
-* [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) – for the fancy devicons
-that appears in the NERDtree and airline status bar. Currently using
-[InconsolataGo](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/InconsolataGo)
-as the preferred font
+* [Oh My ZSH](https://github.com/ohmyzsh/ohmyzsh)
 * [eslint](https://github.com/eslint/eslint) - JavaScript syntax checker
-* [oh-my-fish (optional)](https://github.com/oh-my-fish/oh-my-fish) - Manage the
-  fish shell themes. Currently using `fox` as the preferred theme.
 
 **NOTE**: If you are on Mac OS X, you will also need GNU Coreutils, which can be
 easily installed with HomeBrew:
@@ -69,14 +63,14 @@ cd ./.dotfiles
 And of course, install the vim plugins:
 
 ```
-vim +PluginInstall +qa
+vim +PlugInstall +qa
 ```
 
 ## License
 
 > The MIT License (MIT)
 >
-> Copyright (c) 2015 Bryan Yap
+> Copyright (c) 2021 Bryan Yap
 >
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal

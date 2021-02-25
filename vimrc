@@ -9,7 +9,6 @@
 " - and many, many more...
 "
 
-" Vundle
 set nocompatible              " be iMproved, required
 set ttyfast
 set lazyredraw
@@ -18,64 +17,68 @@ set foldlevel=0
 set modelines=1
 filetype off                  " required
 
+set pyxversion=3
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
 " Plugins {{{
 " ############################################################################ "
 "                               Plugins
 " ############################################################################ "
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'                     " Git plugin
-Plugin 'scrooloose/nerdtree'                    " A tree explorer plugin for vim
-Plugin 'tpope/vim-surround'                     " quoting/parenthesizing made simple
-Plugin 'ctrlpvim/ctrlp.vim'                     " Fuzzy file, buffer, mru, tag, etc finder
-Plugin 'altercation/vim-colors-solarized'       " Precision colorscheme for vim
-Plugin 'rust-lang/rust.vim'                     " Vim support for Rust file detection and syntax highlighting
-Plugin 'bling/vim-airline'                      " Lean & mean status/tabline for vim that’s light as air
-Plugin 'mattn/emmet-vim'                        " Emmet for Vim
-Plugin 'othree/html5.vim'                       " HTML5 autocomplete and syntax
-Plugin 'hail2u/vim-css3-syntax'                 " Vim syntax file for SCSS and improved CSS syntax highlighting
-Plugin 'tomtom/tcomment_vim'                    " An extensible & universal comment vim-plugin that also handles embedded filetypes
-Plugin 'w0rp/ale'                               " An asynchronous linting engine
-Plugin 'rking/ag.vim'                           " Vim plugin to search using the silver searcher (ag)
-Plugin 'cespare/vim-toml'                       " Syntax highlighting for TOML files
-Plugin 'Shougo/deoplete.nvim'                   " Code completion
-Plugin 'roxma/vim-hug-neovim-rpc'               " Required for deoplete
-Plugin 'roxma/nvim-yarp'                        " Required for deoplete
-Plugin 'raimondi/delimitmate'                   " Add closing delimiters automagically
-Plugin 'groenewege/vim-less'                    " Syntax highlighting for LESS
-Plugin 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and splits
-Plugin 'nginx.vim'                              " Nginx config syntax highlighting
-Plugin 'pangloss/vim-javascript'                " Improves JavaScript syntax and indenting
-Plugin 'mxw/vim-jsx'                            " Syntax highlighting and indenting for jsx
-Plugin 'andymass/vim-matchup'                   " Extend % matching to support more than one character
-Plugin 'Lokaltog/vim-easymotion'                " Vim motions on speed!
-Plugin 'sophacles/vim-processing'               " Develop Processing sketches on Vim!
-Plugin 'tpope/vim-abolish'                      " Easily search for, substitute and abbreviate multiple variants of a word
-Plugin 'elixir-lang/vim-elixir'                 " Syntax highlighting for ex, exs and eex files
-Plugin 'tikhomirov/vim-glsl'                    " Vim syntax highlighting for OpenGL Shading Language
-Plugin 'janko-m/vim-test'                       " Runs tests
-Plugin 'wellle/targets.vim'                     " More Vim text objects, works on arguments and delimited texts
-Plugin 'atelierbram/vim-colors_duotones'        " The duotones color scheme
-Plugin 'airblade/vim-gitgutter'                 " Shows where the git diffs are
-" Plugin 'marijnh/tern_for_vim'                   " Tern plugin for VIM
-" Plugin 'majutsushi/tagbar'                      " Vim plugin that displays tags in a window
-Plugin 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
-Plugin 'leafgarland/typescript-vim'             " Adds syntax highlighting for TypeScript (.ts) files
-Plugin 'ianks/vim-tsx'                          " Adds support for tsx files
-Plugin 'hashivim/vim-terraform'                 " Adds support for terraform files, including some shortcuts to run terraform commands
-Plugin 'quramy/tsuquyomi'                       " Adds tsc support
+Plug 'tpope/vim-fugitive'                     " Git plugin
+Plug 'scrooloose/nerdtree'                    " A tree explorer plugin for vim
+Plug 'tpope/vim-surround'                     " quoting/parenthesizing made simple
+Plug 'ctrlpvim/ctrlp.vim'                     " Fuzzy file, buffer, mru, tag, etc finder
+Plug 'altercation/vim-colors-solarized'       " Precision colorscheme for vim
+Plug 'rust-lang/rust.vim'                     " Vim support for Rust file detection and syntax highlighting
+Plug 'bling/vim-airline'                      " Lean & mean status/tabline for vim that’s light as air
+Plug 'mattn/emmet-vim'                        " Emmet for Vim
+Plug 'othree/html5.vim'                       " HTML5 autocomplete and syntax
+Plug 'hail2u/vim-css3-syntax'                 " Vim syntax file for SCSS and improved CSS syntax highlighting
+Plug 'tomtom/tcomment_vim'                    " An extensible & universal comment vim-plugin that also handles embedded filetypes
+Plug 'w0rp/ale'                               " An asynchronous linting engine
+Plug 'rking/ag.vim'                           " Vim plugin to search using the silver searcher (ag)
+Plug 'cespare/vim-toml'                       " Syntax highlighting for TOML files
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'                 " Code completion
+  Plug 'roxma/vim-hug-neovim-rpc'             " Required for deoplete
+  Plug 'roxma/nvim-yarp'                      " Required for deoplete
+endif
+Plug 'raimondi/delimitmate'                   " Add closing delimiters automagically
+Plug 'groenewege/vim-less'                    " Syntax highlighting for LESS
+Plug 'christoomey/vim-tmux-navigator'         " Seamless navigation between tmux panes and splits
+Plug 'pangloss/vim-javascript'                " Improves JavaScript syntax and indenting
+Plug 'mxw/vim-jsx'                            " Syntax highlighting and indenting for jsx
+Plug 'andymass/vim-matchup'                   " Extend % matching to support more than one character
+Plug 'Lokaltog/vim-easymotion'                " Vim motions on speed!
+Plug 'sophacles/vim-processing'               " Develop Processing sketches on Vim!
+Plug 'tpope/vim-abolish'                      " Easily search for, substitute and abbreviate multiple variants of a word
+Plug 'elixir-lang/vim-elixir'                 " Syntax highlighting for ex, exs and eex files
+Plug 'tikhomirov/vim-glsl'                    " Vim syntax highlighting for OpenGL Shading Language
+Plug 'janko-m/vim-test'                       " Runs tests
+Plug 'wellle/targets.vim'                     " More Vim text objects, works on arguments and delimited texts
+Plug 'atelierbram/vim-colors_duotones'        " The duotones color scheme
+Plug 'airblade/vim-gitgutter'                 " Shows where the git diffs are
+" Plug 'marijnh/tern_for_vim'                   " Tern plugin for VIM
+" Plug 'majutsushi/tagbar'                      " Vim plugin that displays tags in a window
+Plug 'ryanoasis/vim-devicons'                 " Adds file type glyphs/icons
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'leafgarland/typescript-vim'             " Adds syntax highlighting for TypeScript (.ts) files
+Plug 'ianks/vim-tsx'                          " Adds support for tsx files
+Plug 'hashivim/vim-terraform'                 " Adds support for terraform files, including some shortcuts to run terraform commands
+Plug 'quramy/tsuquyomi'                       " Adds tsc support
 
 let g:deoplete#enable_at_startup = 1
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -173,7 +176,7 @@ set background=dark
 colorscheme solarized
 highlight clear SignColumn
 highlight Normal ctermfg=14 ctermbg=256
-highlight Visual ctermfg=8 ctermbg=256
+" highlight Visual ctermfg=8 ctermbg=256
 exec "highlight ColorColumn    cterm=NONE ctermfg=196"
 
 " " Colorscheme Duotone-Darkspace
