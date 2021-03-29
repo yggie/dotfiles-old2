@@ -74,6 +74,7 @@ Plug 'leafgarland/typescript-vim'             " Adds syntax highlighting for Typ
 Plug 'ianks/vim-tsx'                          " Adds support for tsx files
 Plug 'hashivim/vim-terraform'                 " Adds support for terraform files, including some shortcuts to run terraform commands
 Plug 'quramy/tsuquyomi'                       " Adds tsc support
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Adds support for GoLang
 
 let g:deoplete#enable_at_startup = 1
 
@@ -175,8 +176,9 @@ augroup END
 set background=dark
 colorscheme solarized
 highlight clear SignColumn
+" check colors with: curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash
 highlight Normal ctermfg=14 ctermbg=256
-" highlight Visual ctermfg=8 ctermbg=256
+highlight Visual ctermfg=8 ctermbg=256
 exec "highlight ColorColumn    cterm=NONE ctermfg=196"
 
 " " Colorscheme Duotone-Darkspace

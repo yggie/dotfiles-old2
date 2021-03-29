@@ -78,6 +78,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
+plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,9 +124,11 @@ alias egrep="egrep --color=always"
 
 if [[ $(uname) = "Darwin" ]]; then
   # requires GNU coreutils to be installed (brew install coreutils)
-  PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-  MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
+  export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+  export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
 fi
+
+export PATH=$PATH:$(go env GOPATH)/bin
 
 eval `dircolors ~/.dircolors`
 
@@ -133,6 +136,15 @@ export GPG_TTY=$(tty)
 
 TERM=xterm-256color
 
-plugins=(zsh-autosuggestions)
-
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export NVM_DIR="$HOME/.nvm"
+    [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+    [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
