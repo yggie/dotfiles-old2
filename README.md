@@ -33,7 +33,7 @@ Additional dependencies that don’t come with the box:
   [deoplete](https://github.com/Shougo/deoplete.nvim) plugin)
 * [vim-plug](https://github.com/junegunn/vim-plug)
 * [tmux](http://tmux.sourceforge.net/)
-* [Oh My ZSH](https://github.com/ohmyzsh/ohmyzsh)
+* [Oh My ZSH](https://ohmyz.sh/#install)
 * [eslint](https://github.com/eslint/eslint) - JavaScript syntax checker
 
 **NOTE**: If you are on Mac OS X, you will also need GNU Coreutils, which can be
