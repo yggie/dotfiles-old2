@@ -9,3 +9,5 @@ Procfile
 Guardfile
 .pryrc
 .rspec
+
+*.code-workspace
